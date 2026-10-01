@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coming Soon | WineVault</title>
+    <meta
+      name="description"
+      content="WineVault is launching soon. Premium home wine cellar design, storage, and installation services."
+    />
+
+    <link rel="stylesheet" href="./main/global.css" />
+    <link rel="stylesheet" href="comming.css" />
+  </head>
+  <body>
+    <main class="coming-page">
+      <div class="coming-container">
+        <div class="coming-card">
+          <div class="coming-controls">
+            <button
+              type="button"
+              class="icon-btn rtl-btn"
+              id="rtlToggle"
+              aria-label="Switch text direction"
+            >
+              <i data-lucide="arrow-left-right"></i>
+            </button>
+
+            <button
+              type="button"
+              class="icon-btn dark-btn"
+              id="darkToggle"
+              aria-label="Switch to dark mode"
+            >
+              <i data-lucide="moon"></i>
+            </button>
+          </div>
+
+          <div class="brand-block">
+            <a href="index.html" class="wine-brand" aria-label="WineVault Home">
+              <span class="wine-brand-image-wrap">
+                <img
+                  src="./images/logo1.png"
+                  alt="WineVault wine cellar logo"
+                  class="wine-brand-image"
+                />
+              </span>
+
+              <span class="wine-brand-content">
+                <span class="wine-brand-title">
+                  <span class="wine-text">Wine</span>
+                  <span class="vault-text">Vault</span>
+                </span>
+
+                <span class="wine-subtitle-wrapper">
+                  <span class="subtitle-line"></span>
+
+                  <span class="wine-subtitle">
+                    <span>HOME WINE CELLAR &amp; STORAGE</span>
+                    <span>INSTALLATION COMPANY</span>
+                  </span>
+
+                  <span class="subtitle-line"></span>
+                </span>
+              </span>
+            </a>
+          </div>
+
+          <div class="coming-badge">
+            <i data-lucide="hourglass"></i>
+            <span>Launching Soon</span>
+          </div>
+
+          <h1 class="coming-title">
+            Something exceptional is aging behind the scenes
+          </h1>
+
+          <p class="coming-description">
+            We are preparing a premium experience for custom home wine cellars,
+            wine storage solutions, cellar cooling systems, and wine bar
+            installations.
+          </p>
+
+          <div class="countdown" id="countdown">
+            <div class="countdown-box">
+              <span class="countdown-value" id="days">00</span>
+              <span class="countdown-label">Days</span>
+            </div>
+
+            <div class="countdown-box">
+              <span class="countdown-value" id="hours">00</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+
+            <div class="countdown-box">
+              <span class="countdown-value" id="minutes">00</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+
+            <div class="countdown-box">
+              <span class="countdown-value" id="seconds">00</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+
+          <form class="notify-form" id="notifyForm">
+            <label for="notifyEmail" class="sr-only">Email address</label>
+
+            <div class="input-field">
+              <i data-lucide="mail"></i>
+              <input
+                type="email"
+                id="notifyEmail"
+                name="email"
+                placeholder="Enter your email for launch updates"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn-primary">
+              <i data-lucide="bell"></i>
+              Notify Me
+            </button>
+          </form>
+
+          <p class="form-message" id="formMessage"></p>
+
+          <div class="coming-services">
+            <span class="services-label">What we’re building</span>
+
+            <div class="service-links">
+              <a href="cellar-design.html">
+                <i data-lucide="pencil-ruler"></i>
+                Cellar Design
+              </a>
+              <a href="cellar-installation.html">
+                <i data-lucide="hammer"></i>
+                Cellar Installation
+              </a>
+              <a href="cooling-systems.html">
+                <i data-lucide="fan"></i>
+                Cooling Systems
+              </a>
+              <a href="wine-bar-setup.html">
+                <i data-lucide="cocktail"></i>
+                Wine Bar Setup
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./main/main.js"></script>
+    <script src="comming.js"></script>
+  </body>
+</html>
