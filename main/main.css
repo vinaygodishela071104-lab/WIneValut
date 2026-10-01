@@ -1,0 +1,1110 @@
+body {
+  padding-top: 96px;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  width: 100%;
+  min-height: 96px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding-right: max(42px, calc((100% - 1500px) / 2));
+  padding-left: max(42px, calc((100% - 1500px) / 2));
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  transition: var(--theme-transition);
+}
+
+.wine-brand {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 2px;
+  flex: 0 0 auto;
+}
+
+.wine-brand-image-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.wine-brand-image {
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.wine-brand-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -4px;
+  padding-right: 6px;
+}
+
+.wine-brand-title {
+  display: flex;
+  align-items: baseline;
+  padding-right: 0.14em;
+  font-family: var(--heading-font);
+  font-size: 2.15rem;
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+}
+
+.wine-text,
+.vault-text {
+  display: inline-block;
+  overflow: visible;
+}
+
+.wine-text {
+  color: transparent;
+  background: linear-gradient(135deg, #7b001f 0%, #a00032 50%, #4a0015 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vault-text {
+  margin-left: 0.025em;
+  color: var(--secondary);
+}
+
+.wine-subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.subtitle-line {
+  display: block;
+  width: 20px;
+  height: 1px;
+  flex: 1 1 20px;
+  background: linear-gradient(to right, #d49a20, #e7b43e);
+}
+
+.wine-subtitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary);
+  font-family: var(--body-font);
+  font-size: 0.3rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.navbar {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.nav-links {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  white-space: nowrap;
+}
+
+.nav-links li {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.nav-links a,
+.dropdown-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 8px;
+  color: var(--primary);
+  font-family: var(--body-font);
+  font-size: var(--nav-font-size);
+  font-weight: var(--nav-font-weight);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-links a::after,
+.dropdown-trigger::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  content: "";
+  background: var(--secondary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a[aria-current="page"],
+.dropdown-trigger:hover,
+.dropdown.active > .dropdown-trigger {
+  color: var(--secondary);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after,
+.nav-links a[aria-current="page"]::after,
+.dropdown-trigger:hover::after,
+.dropdown.active > .dropdown-trigger::after {
+  width: 100%;
+}
+
+.dropdown-trigger svg,
+.dropdown-trigger i {
+  width: 15px;
+  height: 15px;
+  stroke-width: 2.2;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-trigger svg,
+.dropdown:hover .dropdown-trigger i,
+.dropdown.active .dropdown-trigger svg,
+.dropdown.active .dropdown-trigger i {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  z-index: 1001;
+  width: 190px;
+  padding: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 10px);
+  transition: var(--transition);
+}
+
+.dropdown-menu::before {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  content: "";
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  color: var(--primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: var(--nav-font-weight);
+}
+
+.dropdown-menu li a::after {
+  display: none;
+}
+
+.dropdown-menu li a svg,
+.dropdown-menu li a i {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--secondary);
+  stroke-width: 2;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a.active,
+.dropdown-menu li a[aria-current="page"] {
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 10%, transparent);
+}
+
+.buttons {
+  display: flex;
+  min-width: max-content;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  flex: 0 0 auto;
+}
+
+.icon-btn {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-round);
+  transition: var(--transition);
+}
+
+.icon-btn svg,
+.icon-btn i {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.1;
+}
+
+.icon-btn:hover {
+  color: var(--white);
+  background: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-secondary);
+  transform: translateY(-3px);
+}
+
+.desktop-quote {
+  display: inline-flex;
+}
+
+.mobile-quote,
+.menu-btn {
+  display: none;
+}
+
+.site-footer {
+  padding: 65px 50px 20px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  transition: var(--theme-transition);
+}
+
+.footer-container {
+  display: grid;
+  width: 100%;
+  max-width: 1500px;
+  grid-template-columns:
+    minmax(270px, 1.8fr)
+    minmax(130px, 0.9fr)
+    minmax(140px, 1fr)
+    minmax(150px, 1fr)
+    minmax(215px, 1.2fr);
+  gap: 38px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  min-width: 0;
+}
+
+.footer-wine-brand {
+  gap: 2px;
+}
+
+.footer-wine-brand .wine-brand-image {
+  width: 96px;
+  height: 96px;
+}
+
+.footer-wine-brand .wine-brand-content {
+  margin-left: -5px;
+  padding-right: 6px;
+}
+
+.footer-wine-brand .wine-brand-title {
+  padding-right: 0.14em;
+  font-family: var(--heading-font);
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+}
+
+.footer-wine-brand .wine-subtitle {
+  font-size: 0.32rem;
+}
+
+.footer-about {
+  max-width: 390px;
+
+  color: var(--muted);
+  font-size: 0.85em;
+  line-height: 1.8;
+}
+
+.footer-col h3 {
+  position: relative;
+  margin-bottom: 22px;
+  padding-bottom: 10px;
+  color: var(--primary);
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-col h3::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  content: "";
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.footer-col li {
+  margin-bottom: 11px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.footer-col a:not(.btn-primary) {
+  color: var(--muted);
+  transition: var(--transition);
+}
+
+.footer-links li a {
+  display: inline-block;
+}
+
+.footer-links li a:hover {
+  color: var(--secondary);
+  transform: translateX(5px);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--secondary) 30%, transparent);
+  border-radius: var(--radius-round);
+}
+
+.contact-icon svg,
+.contact-icon i {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.social a {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-round);
+  transition: var(--transition);
+}
+
+.social a svg,
+.social a i {
+  width: 17px;
+  height: 17px;
+  color: var(--white);
+  stroke-width: 2;
+}
+
+.social a:hover {
+  color: var(--white);
+  background: var(--secondary);
+  border-color: var(--secondary);
+  transform: translateY(-4px);
+}
+
+.footer-quote {
+  margin-top: 22px;
+}
+
+.footer-bottom {
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 45px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-bottom p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.footer-bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+}
+
+.footer-bottom-links > a:not(.top-btn) {
+  color: var(--muted);
+  font-size: 0.88rem;
+  transition: var(--transition);
+}
+
+.footer-bottom-links > a:not(.top-btn):hover {
+  color: var(--secondary);
+}
+
+.top-btn {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  background: var(--primary);
+  border-radius: var(--radius-round);
+  transition: var(--transition);
+}
+
+.top-btn svg,
+.top-btn i {
+  width: 17px;
+  height: 17px;
+  stroke-width: 2.5;
+}
+
+.top-btn:hover {
+  color: var(--white);
+  background: var(--secondary);
+  transform: translateY(-4px);
+}
+
+body.dark-mode .site-header,
+body.dark-mode .site-footer {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+body.dark-mode .wine-subtitle,
+body.dark-mode .nav-links a,
+body.dark-mode .dropdown-trigger {
+  color: var(--white);
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links a.active,
+body.dark-mode .nav-links a[aria-current="page"],
+body.dark-mode .dropdown-trigger:hover,
+body.dark-mode .dropdown.active > .dropdown-trigger {
+  color: var(--secondary);
+}
+
+body.dark-mode .dropdown-menu {
+  background: var(--surface-alt);
+  border-color: var(--border);
+}
+
+body.dark-mode .dropdown-menu::before {
+  background: var(--surface-alt);
+  border-color: var(--border);
+}
+
+body.dark-mode .dropdown-menu li a {
+  color: var(--white);
+}
+
+body.dark-mode .dropdown-menu li a:hover,
+body.dark-mode .dropdown-menu li a.active,
+body.dark-mode .dropdown-menu li a[aria-current="page"] {
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 12%, transparent);
+}
+
+body.dark-mode .icon-btn {
+  color: var(--white);
+  background: var(--surface-alt);
+  border-color: var(--border);
+}
+
+body.dark-mode .icon-btn:hover {
+  color: var(--white);
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+body.dark-mode .footer-col h3 {
+  color: var(--white);
+}
+
+body.dark-mode .footer-about,
+body.dark-mode .footer-col li,
+body.dark-mode .footer-col a:not(.btn-primary),
+body.dark-mode .footer-bottom p,
+body.dark-mode .footer-bottom-links > a:not(.top-btn) {
+  color: var(--muted);
+}
+
+body.dark-mode .footer-col a:not(.btn-primary):hover,
+body.dark-mode .footer-bottom-links > a:not(.top-btn):hover {
+  color: var(--secondary);
+}
+
+body.dark-mode .social a {
+  color: var(--white);
+  background: var(--surface-alt);
+  border-color: var(--border);
+}
+
+body.dark-mode .social a:hover,
+body.dark-mode .top-btn {
+  color: var(--white);
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+body.dark-mode .top-btn:hover {
+  background: var(--primary);
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+html[dir="rtl"] .dropdown-menu {
+  right: 50%;
+  left: auto;
+  transform: translate(50%, 10px);
+}
+
+html[dir="rtl"] .dropdown:hover .dropdown-menu,
+html[dir="rtl"] .dropdown.active .dropdown-menu {
+  transform: translate(50%, 0);
+}
+
+html[dir="rtl"] .footer-col h3::after {
+  right: 0;
+  left: auto;
+}
+
+html[dir="rtl"] .footer-links li a:hover {
+  transform: translateX(-5px);
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .site-header {
+    min-height: 70px;
+    gap: 7px;
+    padding: 0 12px;
+  }
+
+  .wine-brand {
+    min-width: 0;
+    gap: 0;
+    flex: 1 1 auto;
+  }
+
+  .wine-brand-image {
+    width: 58px;
+    height: 58px;
+  }
+
+  .wine-brand-content {
+    min-width: 0;
+    margin-left: -4px;
+    padding-right: 4px;
+  }
+
+  .wine-brand-title {
+    padding-right: 0.14em;
+    font-size: 1.35rem;
+    letter-spacing: -0.055em;
+  }
+
+  .wine-subtitle-wrapper {
+    gap: 3px;
+    margin-top: 4px;
+  }
+
+  .subtitle-line {
+    width: 9px;
+    flex-basis: 9px;
+  }
+
+  .wine-subtitle {
+    font-size: 0.18rem;
+    letter-spacing: 0.065em;
+  }
+
+  .buttons {
+    gap: 5px;
+  }
+
+  .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .icon-btn svg,
+  .icon-btn i {
+    width: 15px;
+    height: 15px;
+  }
+
+  .desktop-quote {
+    display: none;
+  }
+
+  .menu-btn,
+  .dark-btn,
+  .rtl-btn {
+    display: flex;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0 0;
+    white-space: normal;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    box-shadow: var(--shadow-dropdown);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a,
+  .dropdown-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    font-size: 0.88rem;
+  }
+
+  .nav-links li a::after,
+  .dropdown-trigger::after {
+    display: none;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a.active,
+  .nav-links li a[aria-current="page"],
+  .dropdown.active > .dropdown-trigger {
+    color: var(--secondary);
+    background: color-mix(in srgb, var(--secondary) 7%, transparent);
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 5px 14px 8px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    border: 0;
+    border-radius: 0;
+    background: var(--surface-alt);
+    box-shadow: none;
+  }
+
+  .dropdown-menu::before {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+    transform: none;
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block;
+    transform: none;
+  }
+
+  .dropdown-menu li a {
+    justify-content: center;
+    padding: 13px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 0.83rem;
+  }
+
+  .mobile-quote {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    padding: 6px 20px 20px;
+    background: var(--surface);
+  }
+
+  .mobile-quote.active {
+    display: flex;
+  }
+
+  .mobile-quote .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .site-footer {
+    padding: 48px 20px 18px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-wine-brand {
+    gap: 0;
+  }
+
+  .footer-wine-brand .wine-brand-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .footer-wine-brand .wine-brand-content {
+    margin-left: -5px;
+    padding-right: 4px;
+  }
+
+  .footer-wine-brand .wine-brand-title {
+    padding-right: 0.14em;
+    font-size: 1.58rem;
+    letter-spacing: -0.055em;
+  }
+
+  .footer-wine-brand .wine-subtitle {
+    font-size: 0.2rem;
+  }
+
+  .footer-about {
+    max-width: 100%;
+    font-size: 0.86rem;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 18px;
+  }
+
+  .footer-quote {
+    margin-top: 18px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 35px;
+  }
+
+  .footer-bottom-links {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .top-btn {
+    margin-left: auto;
+  }
+
+  html[dir="rtl"] .top-btn {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  html[dir="rtl"] .dropdown-menu,
+  html[dir="rtl"] .dropdown:hover .dropdown-menu,
+  html[dir="rtl"] .dropdown.active .dropdown-menu {
+    transform: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    padding-top: 78px;
+  }
+
+  .site-header {
+    min-height: 78px;
+    gap: 14px;
+    padding: 0 28px;
+  }
+
+  .wine-brand {
+    min-width: 0;
+    gap: 1px;
+    flex: 1 1 auto;
+  }
+
+  .wine-brand-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .wine-brand-content {
+    margin-left: -4px;
+    padding-right: 5px;
+  }
+
+  .wine-brand-title {
+    padding-right: 0.14em;
+    font-size: 1.8rem;
+    letter-spacing: -0.06em;
+  }
+
+  .wine-subtitle-wrapper {
+    gap: 4px;
+    margin-top: 5px;
+  }
+
+  .subtitle-line {
+    width: 14px;
+    flex-basis: 14px;
+  }
+
+  .wine-subtitle {
+    font-size: 0.26rem;
+    letter-spacing: 0.08em;
+  }
+
+  .footer-wine-brand .wine-brand-image {
+    width: 82px;
+    height: 82px;
+  }
+
+  .footer-wine-brand .wine-brand-content {
+    margin-left: -5px;
+  }
+
+  .footer-wine-brand .wine-brand-title {
+    font-size: 1.95rem;
+  }
+
+  .desktop-quote {
+    display: none;
+  }
+
+  .menu-btn,
+  .dark-btn,
+  .rtl-btn {
+    display: flex;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0 0;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    box-shadow: var(--shadow-dropdown);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a,
+  .dropdown-trigger {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+  }
+
+  .nav-links li a::after,
+  .dropdown-trigger::after {
+    display: none;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a.active,
+  .nav-links li a[aria-current="page"],
+  .dropdown.active > .dropdown-trigger {
+    color: var(--secondary);
+    background: color-mix(in srgb, var(--secondary) 7%, transparent);
+  }
+
+  .dropdown-menu {
+    position: static;
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 5px 28px 8px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    border: 0;
+    border-radius: 0;
+    background: var(--surface-alt);
+    box-shadow: none;
+  }
+
+  .dropdown-menu::before {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none;
+    transform: none;
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block;
+    transform: none;
+  }
+
+  .dropdown-menu li a {
+    justify-content: center;
+    padding: 13px 20px;
+    border-radius: var(--radius-sm);
+  }
+
+  .mobile-quote {
+    display: none;
+    width: 100%;
+    padding: 6px 28px 20px;
+    background: var(--surface);
+  }
+
+  .mobile-quote.active {
+    display: flex;
+  }
+
+  .mobile-quote .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 38px 30px;
+  }
+
+  .footer-brand-col {
+    grid-column: 1 / -1;
+  }
+
+  .footer-about {
+    max-width: 580px;
+  }
+
+  html[dir="rtl"] .dropdown-menu,
+  html[dir="rtl"] .dropdown:hover .dropdown-menu,
+  html[dir="rtl"] .dropdown.active .dropdown-menu {
+    transform: none;
+  }
+}
