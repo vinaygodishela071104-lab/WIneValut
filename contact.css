@@ -1374,7 +1374,11 @@ body.dark-mode .winevault-contact-grid {
   background: var(--surface);
   border-color: var(--border);
 }
-
+.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 1;
+  cursor: pointer;
+}
 body.dark-mode .winevault-contact-card {
   background: var(--surface);
   color: var(--text);
