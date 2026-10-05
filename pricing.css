@@ -327,15 +327,15 @@
 
 .cellar-package-card-featured {
   z-index: 2;
-  margin-top: -22px;
-  margin-bottom: -22px;
-  background: var(--primary);
+  margin-top: 0;
+  margin-bottom: 0;
+  background: var(--surface);
   border: 1px solid var(--secondary);
   box-shadow: var(--shadow-panel);
 }
 
 .cellar-package-card-featured:hover {
-  transform: translateY(-12px);
+  transform: translateY(-8px);
 }
 
 .cellar-package-featured-label {
@@ -400,7 +400,8 @@
 }
 
 .cellar-package-card-featured .cellar-package-number {
-  color: rgba(255, 255, 255, 0.24);
+  color: var(--primary);
+  opacity: 0.2;
 }
 
 .cellar-package-card h3 {
@@ -412,7 +413,7 @@
 }
 
 .cellar-package-card-featured h3 {
-  color: var(--white);
+  color: var(--primary);
 }
 
 .cellar-package-description {
@@ -423,8 +424,8 @@
 }
 
 .cellar-package-card-featured .cellar-package-description {
-  color: var(--white);
-  opacity: 0.78;
+  color: var(--text);
+  opacity: 1;
 }
 
 .cellar-package-price {
@@ -443,8 +444,8 @@
 }
 
 .cellar-package-card-featured .cellar-package-price span {
-  color: var(--white);
-  opacity: 0.7;
+  color: var(--muted);
+  opacity: 1;
 }
 
 .cellar-package-price strong {
@@ -470,7 +471,7 @@
 }
 
 .cellar-package-card-featured .cellar-package-divider {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--border);
 }
 
 .cellar-package-features {
@@ -506,8 +507,8 @@
 }
 
 .cellar-package-card-featured .cellar-package-features li {
-  color: var(--white);
-  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--text);
+  border-color: var(--border);
 }
 
 .cellar-package-use {
@@ -532,8 +533,8 @@
 }
 
 .cellar-package-card-featured .cellar-package-use p {
-  color: var(--white);
-  opacity: 0.78;
+  color: var(--text);
+  opacity: 1;
 }
 
 .cellar-package-button {

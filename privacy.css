@@ -155,7 +155,7 @@
   align-items: center;
   color: var(--primary);
   font-family: var(--body-font);
-  font-size: 0.3rem;
+  font-size: 0.5rem;
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0.1em;
@@ -256,8 +256,8 @@ body.dark-mode .icon-btn {
   color: var(--text);
   background: var(--surface);
 }
-body.dark-mode .wine-subtitle{
-    color: var(--white);
+body.dark-mode .wine-subtitle {
+  color: var(--white);
 }
 html[dir="rtl"] .policy-controls {
   right: auto;

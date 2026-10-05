@@ -1763,6 +1763,10 @@
     box-shadow: 0 0 0 9px rgba(192, 128, 53, 0.04);
   }
 }
+[dir="rtl"] .invisible-essentials__spec-number {
+  right: auto;
+  left: 17px;
+}
 .design-language {
   position: relative;
   overflow: hidden;
