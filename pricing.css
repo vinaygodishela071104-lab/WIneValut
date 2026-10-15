@@ -93,7 +93,6 @@
 .pricing-hero-title-secondary {
   display: block;
   color: var(--secondary);
-  font-style: italic;
 }
 
 .pricing-hero-text {
@@ -290,7 +289,6 @@
 .cellar-packages-title span {
   display: block;
   color: var(--secondary);
-  font-style: italic;
 }
 
 .cellar-packages-intro {
@@ -695,7 +693,6 @@
 .investment-story-title span {
   display: block;
   color: var(--secondary);
-  font-style: italic;
 }
 
 .investment-story-header-copy {
@@ -811,7 +808,6 @@
 .investment-story-feature-content h3 span {
   display: block;
   color: var(--secondary);
-  font-style: italic;
 }
 
 .investment-story-feature-content > p {
@@ -1061,7 +1057,6 @@
 .investment-story-factors-heading h3 em {
   display: block;
   color: var(--secondary);
-  font-style: italic;
 }
 
 .investment-story-factors-heading p {
@@ -1200,7 +1195,6 @@
 .project-examples-title span {
   display: block;
   color: var(--secondary);
-  font-style: italic;
 }
 
 .project-examples-intro {
@@ -1615,7 +1609,6 @@
 .faq-cta-title span {
   display: block;
   color: var(--secondary);
-  font-style: italic;
 }
 
 .faq-cta-copy {
@@ -1715,7 +1708,6 @@
 .faq-cta-faq-title span {
   display: block;
   color: var(--secondary);
-  font-style: italic;
 }
 
 .faq-cta-faq-intro {
@@ -2390,11 +2382,11 @@ body.dark-mode .project-examples-bottom-copy p {
 }
 
 body.dark-mode .project-examples-button {
-  color: var(--secondary);
+  color: var(--white);
 }
 
 body.dark-mode .project-examples-button:hover {
-  color: var(--primary);
+  color: var(--white);
 }
 
 body.dark-mode .faq-cta-section {
